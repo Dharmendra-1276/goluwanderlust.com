@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<style>
+    .form-control{
+        border: black solid 1px !important;
+    }
+    
+   
+    
+
+</style>
+<body>
+
+    <%- include("../includes/navbar.ejs") %>
+    <br><br>
+    <div class="container">
+        <div class="row mb-5 mt-4">
+            <div class="col-9">
+
+
+    <form action="/listing/<%= edit._id %>/place?_method=PUT" method="post">
+    <div class="offset-1">
+          
+        
+          <h1>Edit your listing</h1>
+          <hr class="border border-dark border-2 opacity-0.9">
+          
+          <div class="mb-3">
+            <label for="title">Title</label>
+          <input  class="form-control" type="text" name="listing[title]" value="<%= edit.title %>" id="title">
+          </div>
+
+          <div class="mb-3">
+            <label for="Image">Image link</label>
+            <input class="form-control" type="" name="listing.image.url" value="<%= edit.image.url %>" id="">
+          </div>
+        
+      
+        <div class="row mb-3" >
+
+        <div class=" col-md-6">
+            <label for="country">Country</label>
+        <input class="form-control"  type="text" name="listing[country]" value="<%= edit.country %>" id="">
+        </div>
+        
+        <div class=" col-md-4">
+         <label for="price">Price</label>
+         <input  class="form-control" type="text" name="listing[price]"  value="<%= edit.price %>">
+         </div>
+         </div>
+         <div class="mb-3">
+            <label for="location">location</label><br>
+          <input class="form-control"  type="text " name="listing[location]" value="<%= edit.location %>">
+         </div>
+         <div class="d-grid">
+         <button class="btn btn-outline-success">Submit</button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+</div>
+    
+<%- include("../includes/footer.ejs") %>
+</body>
+</html>

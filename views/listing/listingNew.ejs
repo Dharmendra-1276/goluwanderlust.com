@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+
+    }
+</style>
+<body>
+    <%- include("../includes/navbar.ejs") %>
+    <div class="row">
+        <div class="col-8 offset-2">
+  
+    <form action="/new/listing"  class="form" method="post">
+        
+        <h1 class="h1" > Add your home information </h1>
+        <hr class="border border-danger border-2 opacity-50">
+        
+        <div class="form-floating mb-3 ">
+       <input class="form-control"  type="text" name="listing[title]" id="title" placeholder="" required>
+        <label for="Title">Title</label>
+        </div>
+        
+        
+ <div class="form-floating mb-3">
+        <textarea class="form-control"  type="text" name="listing[description]" id="description" placeholder="description" required></textarea>
+        <label for="description">Description</label>
+    </div>
+       
+
+        <div class="form-floating mb-3">
+            <label for="Image">Image</label>
+        <input class="form-control"  type="text" name="listing[image.url]" id="Image" placeholder="Image" >
+        
+    </div>
+        
+
+        <input class="form-control"  type="file" name="listing[image.filename]" id="">
+        <div class="form-floating mb-3">
+        <input  class="form-control" type="text" name="listing[location]" id="Location" placeholder="Location" required>
+        <label for="Location">Location</label></div>
+       
+        
+            <div class="row">
+        
+        
+        <div class=" mb-3 col-md-4">
+        <label for="Price">Price</label>
+        <input class="form-control"  type="number" name="listing[price]" id="Price" placeholder="Price" required>
+            </div>
+
+        <div class=" mb-3 col-md-8">
+            <label for="Country">Country</label>
+        <input class="form-control"  type="text" name="listing[country]" id="Country" placeholder="Country" required>
+        
+
+    </div>
+        </div>
+        <div class="d-grid">
+        <button class="btn btn-info ">submit</button>
+</div>
+    </form>
+   </div>
+   </div>
+ 
+   <br><br><br>
+   <%- include("../includes/footer.ejs") %>
+    
+</body>
+</html>
